@@ -1,86 +1,3 @@
-dic = [
-    {
-        "lang": "en",
-        "arbol": "Tree",
-        "perro": "Dog",
-        "casa": "House",
-        "lapiz": "Pencil",
-        "calle": "Street",
-    },
-    {
-        "lang": "fr",
-        "arbol": "Arbre",
-        "perro": "Chien",
-        "casa": "Maison",
-        "lapiz": "Crayon",
-        "calle": "Rue",
-    },
-    {
-        "lang": "ch",
-        "arbol": "树木",
-        "perro": "狗",
-        "casa": "宅",
-        "lapiz": "铅笔",
-        "calle": "街头",
-    },
-    {
-        "lang": "ru",
-        "arbol": "дерево",
-        "perro": "собака",
-        "casa": "дом",
-        "lapiz": "карандаш",
-        "calle": "улица",
-    },
-    {
-        "mascota": "Perro",
-        "pez": "Payaso",
-        "herramienta": "Martillo"
-    }
-]
-
-# Obtener la longitud de un diccionario
-# print(len(dic[2]))
-# print(len(dic[-1]))
-
-# Copiar un diccionario
-nuevo_dic = dic[-1].copy()
-nuevo_dic[3.1415927] = "PI"
-# print(dic)
-print('\nnuevo: \n', nuevo_dic)
-
-# Crear un diccionario a partir de otros diccionarios
-
-dic2 = {"computadora": "dell", "teléfono": "huawei", }
-dic3 = {"tv": "LG", "refigerador": "daewoo", }
-
-mas_nuevo_dic = {"primero": nuevo_dic, "segundo": dic2, "tercero": dic3}
-# print('\nmas nuevo: \n', mas_nuevo_dic)
-
-# Iterar un diccionario
-# Mostramos las keys de nuevo_dic
-# for element in nuevo_dic:
-#     print(element)
-
-# # Mostramos los values de nuevo_dic
-# for element in nuevo_dic:
-#     print(nuevo_dic[element])
-
-# # Mostramos llaves y valores del diccionario
-# for element in nuevo_dic:
-#     print(f'{element}: {nuevo_dic[element]}')
-
-# print(nuevo_dic.items())
-# x = list(nuevo_dic.items())
-# print(dict(mascota=x[0][1]))
-
-# Mostrar las llaves de un diccionario
-# print(len(nuevo_dic.keys()))
-# print(list(dic[-2].keys()))
-print(len(dic[-2].keys()))
-
-# Mostrar los valores de un diccionario
-print(nuevo_dic.values())
-
 # Agenda telefónica moderna
 # Datos necesarios:
 # - Nombre
@@ -98,11 +15,68 @@ print(nuevo_dic.values())
 # - Sobrenombre
 # - Cumpleaños
 # - Relación
+import datetime
 
-agenda = {
-    "key1": "value1",
-    "key2": 1234567890,
-    "key3": {
-        "subkey1": "subvalue1"
+agenda = [
+    {
+        'name': {
+            'first_name': 'Juan',
+            'second_name': 'Arturo',
+            'last_name': 'González',
+            'last_name2': 'Ramírez',
+        },
+        'title': '',
+        'organization': '',
+        'phone_number': {
+            'cellphone': 7448372684,
+            'work': 7447228192,
+            'home': 7441003745,
+        },
+        'email': {
+            'personal': 'juanito29@gmail.com',
+            'work': 'jagonzalez@trabajo.com',
+            'other': 'elneneconsentido@gmail.com',
+        },
+        'notes': ['Reprobarlo este semestre', 'Pasarlo en el que sigue'],
+        'groups': [],
+        'nickname': 'Prieto',
+        'birthday': datetime.date(2000, 6, 1),
+        'relationship': 'Alumno',
+    },
+    {
+        'name': {
+            'first_name': 'Camilo',
+            'second_name': '',
+            'last_name': 'Santiago',
+            'last_name2': 'Gutiérrez',
+        },
+        'title': 'Profesor',
+        'organization': 'Facultad de Matemáticas',
+        'phone_number': {
+            'cellphone': 7440192543,
+            'work': 7449301548,
+            'home': 7440192846,
+        },
+        'email': {
+            'personal': 'camilosantiago@gmail.com',
+            'work': 'csantiago@otrotrabajo.com',
+            'other': 'elcamilo@gmail.com',
+        },
+        'notes': [],
+        'groups': ['Profesores'],
+        'nickname': 'El camo',
+        'birthday': datetime.date(1982, 2, 10),
+        'relationship': 'Colega',
     }
-}
+]
+
+# Acceder a la subllave 'first_name' del diccionario 'name'
+# print(agenda[0]['name']['first_name'])
+
+# Acceder al elemento 2 de la lista de la llave 'notas'
+# print(agenda[0]['notes'][1])
+
+# Mostrar primer nombre y primer apellido de todos los registros de la agenda
+for registro in agenda:
+    print(f'{registro["name"]["first_name"]} {registro["name"]["last_name"]}, {registro["title"]}\n{registro["organization"]}')
+    print('\n')
